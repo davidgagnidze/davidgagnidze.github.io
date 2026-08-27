@@ -5,7 +5,7 @@ Static portfolio website for data science and machine learning roles.
 ## Files To Deploy
 
 - `index.html`
-- `David_Gagnidze_MS.pdf`
+- `david_cv.pdf`
 - `public/hero-data-workspace-focused.png`
 - `public/projects/*.png`
 
