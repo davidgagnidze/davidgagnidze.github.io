@@ -1,0 +1,14 @@
+node_modules/
+.nuxt/
+.output/
+.nitro/
+.cache/
+dist/
+.env
+.idea/
+*.iml
+*.log
+*.err.log
+local-dev*.log
+nuxt-*.log
+site-preview*.log
