@@ -322,10 +322,7 @@
 
     .section {
       padding: 46px 0;
-    }
-
-    .section-tight {
-      padding: 22px 0;
+      scroll-margin-top: 76px;
     }
 
     .section-alt {
@@ -361,42 +358,9 @@
       font-size: 0.98rem;
     }
 
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--line);
-    }
-
-    .proof-item {
-      min-width: 0;
-      min-height: 100px;
-      padding: 16px;
-      background: var(--paper);
-    }
-
-    .proof-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-      line-height: 1.15;
-    }
-
-    .proof-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.86rem;
-      font-weight: 650;
-      line-height: 1.25;
-    }
-
     .experience-card,
     .project-card,
-    .mini-project,
-    .profile-card {
+    .mini-project {
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--paper);
@@ -432,8 +396,7 @@
 
     .experience-grid,
     .project-grid,
-    .mini-grid,
-    .profile-grid {
+    .mini-grid {
       display: grid;
       gap: 16px;
     }
@@ -454,6 +417,8 @@
 
     .project-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      grid-auto-rows: 1fr;
     }
 
     .project-card {
@@ -461,10 +426,12 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
     .project-image {
       width: 100%;
+      height: 220px;
       aspect-ratio: 16 / 10;
       object-fit: cover;
       border-bottom: 1px solid var(--line);
@@ -476,6 +443,7 @@
       display: flex;
       flex: 1;
       flex-direction: column;
+      min-height: 0;
     }
 
     .project-meta {
@@ -488,8 +456,7 @@
     }
 
     .project-body p,
-    .mini-project p,
-    .profile-card p {
+    .mini-project p {
       color: var(--muted);
     }
 
@@ -512,7 +479,14 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+      margin-top: 0;
+    }
+
+    .project-bottom {
       margin-top: auto;
+      display: grid;
+      gap: 10px;
+      align-items: start;
     }
 
     .skill {
@@ -532,7 +506,7 @@
       align-items: center;
       gap: 8px;
       min-height: 34px;
-      margin-top: 14px;
+      margin-top: 0;
       color: var(--green);
       font-size: 0.9rem;
       font-weight: 800;
@@ -553,6 +527,9 @@
     .mini-project {
       min-width: 0;
       padding: 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .mini-project h3 {
@@ -564,27 +541,9 @@
       font-size: 0.9rem;
     }
 
-    .profile-grid {
-      grid-template-columns: 1.2fr 0.8fr;
-    }
-
-    .profile-card {
-      min-width: 0;
-      padding: 20px;
-    }
-
-    .profile-card h3 {
-      font-size: 1.05rem;
-    }
-
-    .compact-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .compact-list li + li {
-      margin-top: 6px;
+    .mini-project .project-link {
+      margin-top: auto;
+      padding-top: 6px;
     }
 
     .contact-strip {
@@ -597,12 +556,6 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--paper);
-    }
-
-    .contact-strip p {
-      max-width: 640px;
-      margin-bottom: 0;
-      color: var(--muted);
     }
 
     .contact-strip .button-primary {
@@ -653,14 +606,9 @@
         font-size: 3.55rem;
       }
 
-      .proof-grid,
       .project-grid,
       .mini-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .profile-grid {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -686,7 +634,7 @@
       .nav-links {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 6px;
       }
 
@@ -736,13 +684,9 @@
 
       .section {
         padding: 34px 0;
+        scroll-margin-top: 112px;
       }
 
-      .section-tight {
-        padding: 16px 0;
-      }
-
-      .proof-grid,
       .experience-grid,
       .project-grid,
       .mini-grid,
@@ -750,13 +694,15 @@
         grid-template-columns: 1fr;
       }
 
-      .proof-item {
-        min-height: 0;
-        padding: 14px;
+      .project-grid {
+        grid-auto-rows: auto;
       }
 
-      .experience-card,
-      .profile-card {
+      .project-card {
+        height: auto;
+      }
+
+      .experience-card {
         padding: 18px;
       }
 
@@ -770,6 +716,7 @@
       }
 
       .project-image {
+        height: 210px;
         aspect-ratio: 16 / 9;
       }
 
@@ -798,7 +745,6 @@
       <div class="nav-links">
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
         <a href="./david_cv.pdf" download="David-Gagnidze-CV.pdf">CV</a>
       </div>
     </nav>
@@ -829,27 +775,6 @@
           </a>
           <a class="button button-secondary" href="https://github.com/davidgagnidze">GitHub</a>
           <a class="button button-secondary" href="mailto:yazdavidg14@gmail.com">Email</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-tight" aria-label="Fast recruiter proof">
-      <div class="container proof-grid">
-        <div class="proof-item">
-          <strong>Production ML</strong>
-          <span>Python pipelines, live financial data, XGBoost/LSTM, GCP.</span>
-        </div>
-        <div class="proof-item">
-          <strong>Healthcare Modeling</strong>
-          <span>Longitudinal EHR/lab data project with Sheba Medical Center.</span>
-        </div>
-        <div class="proof-item">
-          <strong>NLP Depth</strong>
-          <span>Local GPT-2 implementation, fine-tuning, HPO, error analysis.</span>
-        </div>
-        <div class="proof-item">
-          <strong>Forecasting</strong>
-          <span>Dayton demand model beat persistence baselines at h1 and h24.</span>
         </div>
       </div>
     </section>
@@ -903,11 +828,13 @@
               <h3>Lab Tests Optimization</h3>
               <p>Evaluated ML/statistical models on longitudinal EHR and lab-history data to reduce redundant lab testing while preserving critical medical information.</p>
               <p class="evidence">Shows healthcare modeling, clinical decision framing, and careful evaluation. No deployment or cost-saving claim is made.</p>
-              <div class="tech-stack">
-                <span class="skill">Python</span>
-                <span class="skill">EHR Data</span>
-                <span class="skill">Statistics</span>
-                <span class="skill">ML</span>
+              <div class="project-bottom">
+                <div class="tech-stack">
+                  <span class="skill">Python</span>
+                  <span class="skill">EHR Data</span>
+                  <span class="skill">Statistics</span>
+                  <span class="skill">ML</span>
+                </div>
               </div>
             </div>
           </article>
@@ -919,13 +846,15 @@
               <h3>GPT-2 Classification &amp; Generation</h3>
               <p>Implemented GPT-2 components, validated against Hugging Face behavior, and fine-tuned for sentiment, paraphrase detection, and sonnet generation.</p>
               <p class="evidence">Dev metrics: 0.980 CFIMDB macro-F1, 0.892 Quora accuracy, 43.049 sonnet chrF. Hidden-test results are not claimed.</p>
-              <div class="tech-stack">
-                <span class="skill">Python</span>
-                <span class="skill">PyTorch</span>
-                <span class="skill">Transformers</span>
-                <span class="skill">HPO</span>
+              <div class="project-bottom">
+                <div class="tech-stack">
+                  <span class="skill">Python</span>
+                  <span class="skill">PyTorch</span>
+                  <span class="skill">Transformers</span>
+                  <span class="skill">HPO</span>
+                </div>
+                <a class="project-link" href="https://github.com/davidgagnidze/gpt2-classification-and-generation">View GitHub</a>
               </div>
-              <a class="project-link" href="https://github.com/davidgagnidze/gpt2-classification-and-generation">View GitHub</a>
             </div>
           </article>
 
@@ -936,13 +865,15 @@
               <h3>Dayton Electricity Forecasting</h3>
               <p>Built a leakage-aware time-series workflow for hourly demand forecasting with load history, weather data, XGBoost, DuckDB, and Streamlit.</p>
               <p class="evidence">MAE: h1 16.69 MW vs 62.35 persistence; h24 107.40 MW vs 161.83 persistence.</p>
-              <div class="tech-stack">
-                <span class="skill">XGBoost</span>
-                <span class="skill">Time Series</span>
-                <span class="skill">DuckDB</span>
-                <span class="skill">Streamlit</span>
+              <div class="project-bottom">
+                <div class="tech-stack">
+                  <span class="skill">XGBoost</span>
+                  <span class="skill">Time Series</span>
+                  <span class="skill">DuckDB</span>
+                  <span class="skill">Streamlit</span>
+                </div>
+                <a class="project-link" href="https://github.com/davidgagnidze/electricity_demand_forecast">View GitHub</a>
               </div>
-              <a class="project-link" href="https://github.com/davidgagnidze/electricity_demand_forecast">View GitHub</a>
             </div>
           </article>
         </div>
@@ -970,41 +901,12 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Skills &amp; Education</p>
-          <h2 id="skills-title">The short version</h2>
-        </div>
-
-        <div class="profile-grid">
-          <article class="profile-card">
-            <h3>Technical Stack</h3>
-            <ul class="compact-list">
-              <li>Data Science: statistical modeling, ML, deep learning, time series, NLP, forecasting, classification, regression.</li>
-              <li>Programming: Python, SQL, R.</li>
-              <li>Libraries/tools: pandas, NumPy, scikit-learn, PyTorch, TensorFlow, XGBoost, GCP, Docker, Git, Streamlit, DuckDB.</li>
-            </ul>
-          </article>
-          <article class="profile-card">
-            <h3>Education</h3>
-            <ul class="compact-list">
-              <li>B.Sc. Data Science, Tel Aviv University, 2023-2026. GPA: 89.</li>
-              <li>Incoming M.Sc. Statistics student, Tel Aviv University, starting Oct 2026.</li>
-              <li>Coursework: Statistical Models, Statistical Theory, Machine Learning, Deep Learning, Optimization, Database Design.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="contact-title">
+    <section class="section section-alt" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-strip">
           <div>
             <p class="eyebrow">Contact</p>
             <h2 id="contact-title">Open to junior Data Scientist roles.</h2>
-            <p>Best next step: review the CV or GitHub, then email me for a focused conversation.</p>
           </div>
           <div class="actions">
             <a class="button button-primary" href="mailto:yazdavidg14@gmail.com">Email me</a>
