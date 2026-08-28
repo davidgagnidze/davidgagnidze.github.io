@@ -107,62 +107,6 @@
       transform: translateY(0);
     }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      color: white;
-      background: rgba(12, 18, 24, 0.94);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav {
-      width: 100%;
-      max-width: var(--content);
-      min-height: 60px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 12px 22px;
-    }
-
-    .nav-brand {
-      font-weight: 850;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      min-width: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 850;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      min-width: 0;
-      min-height: 34px;
-      padding: 7px 10px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 6px;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      border-color: white;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
     .hero {
       position: relative;
       min-height: 570px;
@@ -322,7 +266,7 @@
 
     .section {
       padding: 46px 0;
-      scroll-margin-top: 76px;
+      scroll-margin-top: 24px;
     }
 
     .section-alt {
@@ -617,31 +561,10 @@
         font-size: 15px;
       }
 
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-        padding-right: 14px;
-        padding-left: 14px;
-      }
-
       .hero-inner,
       .container {
         padding-right: 14px;
         padding-left: 14px;
-      }
-
-      .nav-links {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 6px;
-      }
-
-      .nav-links a {
-        min-height: 36px;
-        padding: 7px 6px;
-        font-size: 0.72rem;
       }
 
       .hero {
@@ -684,7 +607,7 @@
 
       .section {
         padding: 34px 0;
-        scroll-margin-top: 112px;
+        scroll-margin-top: 20px;
       }
 
       .experience-grid,
@@ -726,10 +649,6 @@
     }
 
     @media (max-width: 380px) {
-      .nav-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       h1 {
         font-size: 2.25rem;
       }
@@ -739,23 +658,11 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" aria-label="Primary navigation">
-    <nav class="nav">
-      <a class="nav-brand" href="#top">David Gagnidze</a>
-      <div class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="./david_cv.pdf" download="David-Gagnidze-CV.pdf">CV</a>
-      </div>
-    </nav>
-  </header>
-
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <img class="hero-photo" src="./public/hero-data-workspace-focused.png" width="1672" height="941" alt="">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-inner">
-        <p class="eyebrow">Junior Data Scientist | Tel Aviv</p>
         <h1 id="hero-title">David Gagnidze</h1>
         <p class="hero-position">Junior Data Scientist</p>
         <p class="hero-copy">I build practical ML pipelines and communicate results with clear limits.</p>
@@ -816,7 +723,6 @@
         <div class="section-heading">
           <p class="eyebrow">Selected Projects</p>
           <h2 id="projects-title">Best evidence for a quick recruiter skim</h2>
-          <p class="section-intro">Each card keeps only the problem, strongest proof, stack and link where available.</p>
         </div>
 
         <div class="project-grid">
